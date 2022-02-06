@@ -1,0 +1,27 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelalmeidamartins/shopping-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelalmeidamartins/shopping-cart/issues"
+  },
+  "homepage": "https://github.com/raphaelalmeidamartins/shopping-cart#readme",
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "stylelint": "^14.3.0"
+  }
+}
