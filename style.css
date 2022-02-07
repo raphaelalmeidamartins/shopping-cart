@@ -172,6 +172,7 @@ body {
   flex-flow: column wrap;
   background-color: rgb(241, 241, 238);
   height: 100vh;
+  padding: 20px;
 }
 
 .cart .cart__items {
@@ -179,6 +180,21 @@ body {
   overflow-y: scroll;
 }
 
+.cart__item__image__container {
+  width: 80px;
+  height: 80px;
+}
+
+.cart__item__image__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cart__item__sku {
+  display: none;
+}
 .empty-cart {
   width: 170px;
   height: 35px;

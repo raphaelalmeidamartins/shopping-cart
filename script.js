@@ -44,9 +44,16 @@ function createCustomElement(element, className, innerText) {
 
 function createCartItemImage(image) {
   const div = document.createElement('div');
+  div.className = 'cart__item__image__container'
   const img = document.createElement('img');
   img.src = image;
   div.appendChild(img);
+  return div;
+}
+
+function createCartItemInformation() {
+  const div = document.createElement('div');
+  div.className = 'cart__item__info__container'
   return div;
 }
 
@@ -54,9 +61,11 @@ function createCartItemElement({ sku, name, image, price }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.appendChild(createCartItemImage(image));
-  li.appendChild(createCustomElement('p', 'cart__item__sku', sku));
-  li.appendChild(createCustomElement('p', 'cart__item__title', name));
-  li.appendChild(createCustomElement('p', 'cart__item__price', `R$ ${price.toFixed(2).replace('.', ',')}`));
+  const divInfo = createCartItemInformation();
+  divInfo.appendChild(createCustomElement('p', 'cart__item__sku', sku));
+  divInfo.appendChild(createCustomElement('p', 'cart__item__title', name));
+  divInfo.appendChild(createCustomElement('p', 'cart__item__price', `R$ ${price.toFixed(2).replace('.', ',')}`));
+  li.appendChild(divInfo);
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
