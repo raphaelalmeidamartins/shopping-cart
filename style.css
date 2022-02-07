@@ -1,25 +1,25 @@
 /* font-family: Ubuntu, sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* font-family: 'Montserrat', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: rgb(246, 246, 246);
+  background-color: rgb(246 246 246);
 }
 
 .header {
   position: fixed;
-  background-color: rgb(3, 52, 45);
+  background-color: rgb(3 52 45);
   display: flex;
   align-items: center;
   width: 100%;
@@ -29,15 +29,16 @@ body {
 .header-cart {
   position: relative;
   color: white;
-  background-color: rgb(10, 118, 79);
+  background-color: rgb(10 118 79);
   padding-left: 20px;
 }
 
-.close-icon, .display-icon {
+.close-icon,
+.display-icon {
   position: absolute;
-  color: rgb(178, 201, 144);
+  color: rgb(178 201 144);
   cursor: pointer;
-  text-shadow: 0 0 20px rgb(3, 68, 44);
+  text-shadow: 0 0 20px rgb(3 68 44);
 }
 
 .close-icon {
@@ -49,9 +50,9 @@ body {
   position: absolute;
   left: -50px;
   font-size: 2rem;
-  color: rgb(178, 201, 144);
+  color: rgb(178 201 144);
   cursor: pointer;
-  text-shadow: 0 0 20px rgb(3, 68, 44);
+  text-shadow: 0 0 20px rgb(3 68 44);
 }
 
 #display-cart {
@@ -68,26 +69,12 @@ body {
 }
 
 .title {
-  color: rgb(221, 221, 221);
+  color: rgb(221 221 221);
   font-size: 30px;
   padding-left: 30px;
 }
 
-.container-cartTitle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: rgb(10, 118, 79);
-  width: 40%;
-  height: 100%;
-  margin-left: 30px;
-}
-
-.container-cartTitle span {
-  z-index: 1;
-}
-
-.container-cartTitle .cart-title {
+.container-cart-title .cart-title {
   color: white;
   font-size: 20px;
   padding-left: 35px;
@@ -118,7 +105,7 @@ body {
   margin: 5px;
   padding: 20px;
   width: 250px;
-  border: 2px solid rgb(234, 234, 233);
+  border: 2px solid rgb(234 234 233);
   border-radius: 5px;
   box-sizing: border-box;
   background-color: white;
@@ -126,12 +113,24 @@ body {
 
 .item:hover {
   transition: 400ms;
-  transition-property:box-shadow;
-  box-shadow: 0 0 20px rgb(168, 167, 167);
+  transition-property: box-shadow;
+  box-shadow: 0 0 20px rgb(168 167 167);
 }
 
 .item .item-sku {
   display: none;
+}
+
+.item-title,
+.cart-item-title {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.item-title,
+.item-image,
+.item-price {
+  margin: 0 0 20px;
 }
 
 .item .item-title {
@@ -139,11 +138,6 @@ body {
   align-items: flex-start;
   flex-grow: 1;
   text-align: left;
-}
-
-.item-title, .cart-item-title {
-  font-weight: 200;
-  font-style: italic;
 }
 
 .item .item-image {
@@ -155,17 +149,12 @@ body {
   font-size: 1.2rem;
 }
 
-.item-title, .item-image, .item-price {
-  margin: 0 0 20px;
-}
-
 .item-add {
   border-radius: 10px;
 }
 
-
 .item .item-add {
-  background-color: rgb(5, 52, 219);
+  background-color: rgb(5 52 219);
   border: 0;
   cursor: pointer;
   margin: 0;
@@ -179,7 +168,7 @@ body {
   z-index: 2;
   right: -375px;
   transition: 400ms;
-  transition-property:right;
+  transition-property: right;
 }
 
 .cart {
@@ -189,7 +178,7 @@ body {
   background-color: white;
   height: 100vh;
   padding: 20px;
-  box-shadow: 0 0 20px rgb(168, 167, 167);
+  box-shadow: 0 0 20px rgb(168 167 167);
 }
 
 .cart-item {
@@ -208,8 +197,9 @@ body {
   opacity: 1;
 }
 
-.cart-item, .cart-item-title {
-  margin: 0 0 20px 0;
+.cart-item,
+.cart-item-title {
+  margin: 0 0 20px;
 }
 
 .cart-item-price {
@@ -222,7 +212,7 @@ body {
 }
 
 .cart-items li {
-  border-bottom: 1px solid rgb(173, 173, 173);
+  border-bottom: 1px solid rgb(173 173 173);
 }
 
 .cart-items li:last-child {
@@ -261,8 +251,7 @@ body {
   color: red;
   border: 1px solid red;
   border-radius: 10px;
-  background-color: rgb(249, 249, 246);
-  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(249 249 246);
   font-size: 1.1rem;
   font-weight: 300;
   cursor: pointer;
