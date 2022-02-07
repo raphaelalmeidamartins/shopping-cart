@@ -1,4 +1,4 @@
-const cartItems = document.querySelector('.cart__items');
+const cartItems = document.querySelector('.cart-items');
 const totalPrice = document.querySelector('.total-price');
 const displayCart = document.querySelector('#display-cart');
 
@@ -20,13 +20,13 @@ displayCart.addEventListener('click', () => {
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
-  img.className = 'item__image';
+  img.className = 'item-image';
   img.src = imageSource;
   return img;
 }
 
 function getSkuFromProductItem(item) {
-  return item.querySelector('span.item__sku').innerText;
+  return item.querySelector('span.item-sku').innerText;
 }
 
 function sumPrices() {
@@ -35,7 +35,7 @@ function sumPrices() {
   [...cartItems.children]
     .forEach((item) => {
       let itemPrice = item
-        .querySelector('.cart__item__price')
+        .querySelector('.cart-item-price')
         .innerText.split(' ')[1].replace(',', '.');
       total += Number(itemPrice);
     });
@@ -59,7 +59,7 @@ function createCustomElement(element, className, innerText) {
   if (innerText) e.innerText = innerText;
   if (element === 'button') e.addEventListener('click', addProductToCart);
   if (element === 'i') {
-    e.title = 'Remover item do carrinho'
+    e.title = 'Remover item do carrinho';
     e.addEventListener('click', cartItemClickListener);
   }
   return e;
@@ -67,7 +67,7 @@ function createCustomElement(element, className, innerText) {
 
 function createCartItemImage(image) {
   const div = document.createElement('div');
-  div.className = 'cart__item__image__container'
+  div.className = 'cart-item-image-container';
   const img = document.createElement('img');
   img.src = image;
   div.appendChild(img);
@@ -76,20 +76,20 @@ function createCartItemImage(image) {
 
 function createCartItemInformation() {
   const div = document.createElement('div');
-  div.className = 'cart__item__info__container'
+  div.className = 'cart-item-info-container';
   return div;
 }
 
 function createCartItemElement({ sku, name, image, price }) {
   const li = document.createElement('li');
-  li.className = 'cart__item';
+  li.className = 'cart-item';
   li.appendChild(createCartItemImage(image));
   const divInfo = createCartItemInformation();
-  divInfo.appendChild(createCustomElement('p', 'cart__item__sku', sku));
-  divInfo.appendChild(createCustomElement('p', 'cart__item__title', name));
-  divInfo.appendChild(createCustomElement('p', 'cart__item__price', `R$ ${price.toFixed(2).replace('.', ',')}`));
+  divInfo.appendChild(createCustomElement('p', 'cart-item-sku', sku));
+  divInfo.appendChild(createCustomElement('p', 'cart-item-title', name));
+  divInfo.appendChild(createCustomElement('p', 'cart-item-price', `R$ ${price.toFixed(2).replace('.', ',')}`));
   li.appendChild(divInfo);
-  li.appendChild(createCustomElement('i', 'fas fa-trash cart__item__remove'));
+  li.appendChild(createCustomElement('i', 'fas fa-trash cart-item-remove'));
   return li;
 }
 
@@ -112,11 +112,11 @@ async function addProductToCart(event) {
 function createProductItemElement({ sku, name, image, price }) {
   const section = document.createElement('section');
   section.className = 'item';
-  section.appendChild(createCustomElement('span', 'item__sku', sku));
+  section.appendChild(createCustomElement('span', 'item-sku', sku));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(createCustomElement('p', 'item__price', price));
-  section.appendChild(createCustomElement('span', 'item__title', name));
-  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('p', 'item-price', price));
+  section.appendChild(createCustomElement('span', 'item-title', name));
+  section.appendChild(createCustomElement('button', 'item-add', 'Adicionar ao carrinho!'));
 
   return section;
 }
@@ -147,13 +147,14 @@ window.onload = async () => {
     cartIcon.className = classCartIcon;
     const savedItems = getSavedCartItems();
     cartItems.innerHTML = savedItems;
-    [...document.querySelectorAll('.cart__item__remove')]
+    [...document.querySelectorAll('.cart-item-remove')]
       .forEach((item) =>  item.addEventListener('click', cartItemClickListener));
     sumPrices();
   }
   document.querySelector('.empty-cart')
     .addEventListener('click', () => {
       cartItems.innerHTML = '';
+      classCartIcon = cartEmpty;
       sumPrices();
       localStorage.clear();
     });
