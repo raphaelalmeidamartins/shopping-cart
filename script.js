@@ -1,5 +1,19 @@
 const cartItems = document.querySelector('.cart__items');
 const totalPrice = document.querySelector('.total-price');
+const displayCart = document.querySelector('#display-cart');
+let classCartIcon = 'fas fa-shopping-cart display-icon'
+
+displayCart.addEventListener('click', () => {
+  const cartContainer = document.querySelector('.cart-container');
+  const cartIcon = document.querySelector('#cart-icon');
+  if (displayCart.checked) {
+    cartContainer.style.right = '-375px';
+    cartIcon.className = classCartIcon;
+  } else {
+    cartContainer.style.right = '0';
+    cartIcon.className = 'fas fa-times-circle close-icon';
+  }
+});
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
