@@ -204,8 +204,12 @@ body {
   overflow-y: scroll;
 }
 
-.cart__items li:not(last-child) {
+.cart__items li {
   border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.cart__items li:last-child {
+  border-bottom: 0;
 }
 
 .cart__item__image__container {
