@@ -22,7 +22,7 @@ function sumPrices() {
         .innerText.split(' ')[1].replace(',', '.');
       total += Number(itemPrice);
     });
-  totalPrice.innerHTML = total.toFixed(2).replace('.', ',');
+  totalPrice.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
   return total;
 }
 

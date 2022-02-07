@@ -18,7 +18,7 @@ body {
 }
 
 .header {
-  position: relative;
+  position: fixed;
   background-color: rgb(3, 52, 45);
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@ body {
   flex-basis: 70%;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 40px 0;
+  margin: 90px 0;
 }
 
 .item {
@@ -115,7 +115,7 @@ body {
 .item:hover {
   transition: 400ms;
   transition-property:box-shadow;
-  box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px rgb(168, 167, 167);
 }
 
 .item:hover *:not(.item__sku) {
@@ -155,7 +155,9 @@ body {
 
 .item__add {
   display:none;
+  border-radius: 10px;
 }
+
 
 .item .item__add {
   background-color: rgb(5, 52, 219);
@@ -167,7 +169,11 @@ body {
 }
 
 .cart {
+  position: fixed;
+  top: 60px;
+  right: 0;
   display: flex;
+  width: 369px;
   flex-basis: 32%;
   flex-flow: column wrap;
   background-color: rgb(241, 241, 238);
@@ -227,10 +233,31 @@ body {
 .cart__item__sku {
   display: none;
 }
+
+.total-label {
+  margin: 20px 0;
+}
+
+.total-price {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
 .empty-cart {
-  width: 170px;
-  height: 35px;
-  margin: 0 auto;
-  border: 2px solid rgb(5, 52, 219);
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 10px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 10px;
   background-color: rgb(249, 249, 246);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.empty-cart:hover {
+  color: white;
+  background-color: red;
 }
