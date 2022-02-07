@@ -35,13 +35,13 @@ body {
 
 .close-icon, .display-icon {
   position: absolute;
-  left: -50px;
   color: rgb(178, 201, 144);
   cursor: pointer;
   text-shadow: 0 0 20px rgb(3, 68, 44);
 }
 
 .close-icon {
+  left: -50px;
   font-size: 2.6rem;
 }
 
@@ -271,4 +271,12 @@ body {
 .empty-cart:hover {
   color: white;
   background-color: red;
+}
+
+@media screen and (max-width: 430px) {
+  .close-icon {
+    position: static;
+    margin-right: 20px;
+    font-size: 2rem;
+  }
 }
