@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/raphaelalmeidamartins/shopping-cart#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "eslint": "^8.8.0",
     "stylelint": "^14.3.0",
     "stylelint-config-standard": "^24.0.0"

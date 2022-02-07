@@ -28,8 +28,7 @@ function sumPrices() {
 
 function cartItemClickListener(event) {
   const clicked = event.target;
-  if (clicked.tagName !== 'IMG') clicked.parentElement.remove();
-  else clicked.parentElement.parentElement.remove();
+  clicked.parentElement.parentElement.remove();
   saveCartItems(cartItems.innerHTML);
   sumPrices();
 }
@@ -37,8 +36,9 @@ function cartItemClickListener(event) {
 function createCustomElement(element, className, innerText) {
   const e = document.createElement(element);
   e.className = className;
-  e.innerText = innerText;
+  if (innerText) e.innerText = innerText;
   if (element === 'button') e.addEventListener('click', addProductToCart);
+  if (element === 'i') e.addEventListener('click', cartItemClickListener);
   return e;
 }
 
@@ -65,8 +65,8 @@ function createCartItemElement({ sku, name, image, price }) {
   divInfo.appendChild(createCustomElement('p', 'cart__item__sku', sku));
   divInfo.appendChild(createCustomElement('p', 'cart__item__title', name));
   divInfo.appendChild(createCustomElement('p', 'cart__item__price', `R$ ${price.toFixed(2).replace('.', ',')}`));
+  divInfo.appendChild(createCustomElement('i', 'fas fa-trash'));
   li.appendChild(divInfo);
-  li.addEventListener('click', cartItemClickListener);
   return li;
 }
 
