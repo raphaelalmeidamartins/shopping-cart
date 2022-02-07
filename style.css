@@ -177,6 +177,18 @@ body {
 
 .cart__item {
   display: flex;
+  padding-bottom: 20px;
+}
+
+.cart__item__remove {
+  align-self: flex-end;
+  padding-right: 20px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.cart__item__remove:hover {
+  opacity: 1;
 }
 
 .cart__item, .cart__item__title {
@@ -190,6 +202,10 @@ body {
 .cart .cart__items {
   height: 500px;
   overflow-y: scroll;
+}
+
+.cart__items li:not(last-child) {
+  border-bottom: 1px solid rgb(173, 173, 173);
 }
 
 .cart__item__image__container {

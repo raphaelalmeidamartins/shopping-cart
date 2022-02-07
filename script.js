@@ -27,8 +27,7 @@ function sumPrices() {
 }
 
 function cartItemClickListener(event) {
-  const clicked = event.target;
-  clicked.parentElement.parentElement.remove();
+  event.target.parentElement.remove();
   saveCartItems(cartItems.innerHTML);
   sumPrices();
 }
@@ -38,7 +37,10 @@ function createCustomElement(element, className, innerText) {
   e.className = className;
   if (innerText) e.innerText = innerText;
   if (element === 'button') e.addEventListener('click', addProductToCart);
-  if (element === 'i') e.addEventListener('click', cartItemClickListener);
+  if (element === 'i') {
+    e.title = 'Remover item do carrinho'
+    e.addEventListener('click', cartItemClickListener);
+  }
   return e;
 }
 
@@ -65,8 +67,8 @@ function createCartItemElement({ sku, name, image, price }) {
   divInfo.appendChild(createCustomElement('p', 'cart__item__sku', sku));
   divInfo.appendChild(createCustomElement('p', 'cart__item__title', name));
   divInfo.appendChild(createCustomElement('p', 'cart__item__price', `R$ ${price.toFixed(2).replace('.', ',')}`));
-  divInfo.appendChild(createCustomElement('i', 'fas fa-trash'));
   li.appendChild(divInfo);
+  li.appendChild(createCustomElement('i', 'fas fa-trash cart__item__remove'));
   return li;
 }
 
