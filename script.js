@@ -59,7 +59,7 @@ function createCustomElement(element, className, innerText) {
   if (innerText) e.innerText = innerText;
   if (element === 'button') e.addEventListener('click', addProductToCart);
   if (element === 'i') {
-    e.title = 'Remover item do carrinho';
+    e.title = 'Remove item';
     e.addEventListener('click', cartItemClickListener);
   }
   return e;
@@ -116,7 +116,7 @@ function createProductItemElement({ sku, name, image, price }) {
   section.appendChild(createProductImageElement(image));
   section.appendChild(createCustomElement('p', 'item-price', price));
   section.appendChild(createCustomElement('span', 'item-title', name));
-  section.appendChild(createCustomElement('button', 'item-add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('button', 'item-add', 'Add to cart'));
 
   return section;
 }
