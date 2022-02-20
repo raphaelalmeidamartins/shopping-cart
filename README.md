@@ -4,7 +4,7 @@
 
 ## :page_with_curl: About
 
-Project of HTML, CSS, and JavaScript developed by me ([Raphael Martins](https://www.linkedin.com/in/raphaelameidamartins/)) at the end of the Unit 9 Module 1 of the [Trybe](https://www.betrybe.com)'s Web Development course. I was approved with 100% of the mandatory and optional requirements met.
+Project of HTML, CSS, and JavaScript developed by me ([Raphael Martins](https://www.linkedin.com/in/raphaelameidamartins/)) at the end of Unit 9 ([Principles of Web Development Module](https://github.com/raphaelalmeidamartins/trybe_exercicios/tree/main/1_fundamentos-do-desv-web)) of the [Trybe](https://www.betrybe.com)'s Web Development course. I was approved with 100% of the mandatory and optional requirements met.
 
 We developed a dynamic web page fetching for products data from the [Mercado Livre](https://www.mercadolivre.com.br/)'s API. We also had to implement unit tests by using the Jest framework to verify our asynchronous functions. The page is an ecommerce website that the user can add or remove items from the shopping cart.
 
