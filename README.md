@@ -16,6 +16,7 @@ We developed a dynamic web page fetching for products data from the [Mercado Liv
 * CSS3
 * JavaScript ES6+
 * Jest
+* Font Awesome (icon library)
 
 ## :memo: Methodologies
 
