@@ -12,7 +12,7 @@ We developed a dynamic web page fetching for products data from the [Mercado Liv
 
 ## :man_technologist: Developed Skills
 
-* Use asyncronus functions to fetch data from a API
+* Use asynchronous functions to fetch data from a API
 * Implement unit tests to these functions with Jest
 * Develop a web page using HTML, CSS and JavaScript
 
