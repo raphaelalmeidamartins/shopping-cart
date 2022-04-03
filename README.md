@@ -10,6 +10,12 @@ We developed a dynamic web page fetching for products data from the [Mercado Liv
 
 [Click here](https://raphaelalmeidamartins.github.io/shopping-cart/) to check out the final version of the project on your browser.
 
+## :man_technologist: Developed Skills
+
+* Use asyncronus functions to fetch data from a API
+* Implement unit tests to these functions with Jest
+* Develop a web page using HTML, CSS and JavaScript
+
 ## :hammer_and_wrench: Tools
 
 * HTML5

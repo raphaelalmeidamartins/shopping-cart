@@ -174,8 +174,7 @@ body {
 .cart {
   display: flex;
   flex-basis: 32%;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   background-color: white;
   height: 100vh;
   padding: 20px;
@@ -272,5 +271,6 @@ body {
 
   .cart-container {
     width: 100vw;
+    right: -100vw;
   }
 }
