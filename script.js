@@ -156,6 +156,6 @@ window.onload = async () => {
       cartItems.innerHTML = '';
       classCartIcon = cartEmpty;
       sumPrices();
-      localStorage.clear();
+      localStorage.removeItem('cartItems');
     });
 };
