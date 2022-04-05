@@ -46,7 +46,7 @@ function sumPrices() {
 function cartItemClickListener(event) {
   event.target.parentElement.remove();
   if (cartItems.children.length === 0) {
-    localStorage.clear();
+    localStorage.removeItem('cartItems');
     classCartIcon = cartEmpty;
   }
   else saveCartItems(cartItems.innerHTML);
@@ -142,7 +142,7 @@ function loadingItems() {
 window.onload = async () => {
   loadingItems();
   await appendProducts();
-  if (localStorage.length !== 0) {
+  if (localStorage.cartItems) {
     classCartIcon = cartFull;
     cartIcon.className = classCartIcon;
     const savedItems = getSavedCartItems();
